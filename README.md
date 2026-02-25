@@ -4,33 +4,33 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python)
 ![AI & LLM](https://img.shields.io/badge/AI_%26_LLM-Integrated-FF9D00?style=for-the-badge&logo=openai)
 
-> Questo pacchetto ROS 2 (`project_nodes`) gestisce l'interazione intelligente con il robot umanoide **Pepper**. Combina il riconoscimento facciale, l'elaborazione audio avanzata e l'integrazione con un **LLM (Large Language Model)** per permettere a Pepper di riconoscere gli utenti, interagire in modo naturale e gestire una *To-Do List* personalizzata.
+> This ROS 2 package (`project_nodes`) manages intelligent interaction with the humanoid robot **Pepper**. It combines facial recognition, advanced audio processing, and integration with a **Large Language Model (LLM)** to allow Pepper to recognize users, interact naturally, and manage a personalized *To-Do List*.
 
 ---
 
-## 🧠 Architettura del Progetto
+## 🧠 Project Architecture
 
 
 
-Il sistema si appoggia al pacchetto base `pepper_nodes` per l'interfaccia hardware e aggiunge un livello di intelligenza superiore tramite i seguenti nodi principali:
+The system builds upon the base `pepper_nodes` package for hardware interfacing and adds a higher level of intelligence through the following main nodes:
 
-* 🧩 **Orchestrator:** Il *cervello centrale* che coordina le transizioni di stato e gestisce la logica del sistema.
-* 🎙️ **Audio Pipeline:** Gestisce il VAD (*Voice Activity Detection*), l'ASR (*Automatic Speech Recognition*) tramite SpeechBrain e la logica di trascrizione in tempo reale.
-* 👁️ **Facial Recognition:** Utilizza la telecamera di Pepper e librerie di computer vision avanzate (es. *DeepFace*) per identificare chi sta parlando.
-* 💬 **LLM Node:** Invia i prompt testuali a un modello linguistico per generare risposte conversazionali naturali e tradurre le richieste vocali in azioni sulla To-Do List.
-* 🔄 **Awareness Node** *(da `pepper_nodes`)*: Gestisce il tracking visivo per far sì che Pepper mantenga il contatto visivo (*"SemiEngaged"*) con l'utente in modo fluido e umano.
+* 🧩 **Orchestrator:** The *central brain* that coordinates state transitions and manages the system's logic.
+* 🎙️ **Audio Pipeline:** Handles VAD (*Voice Activity Detection*), ASR (*Automatic Speech Recognition*) via SpeechBrain, and real-time transcription logic.
+* 👁️ **Facial Recognition:** Utilizes Pepper's camera and advanced computer vision libraries (e.g., *DeepFace*) to identify the speaker.
+* 💬 **LLM Node:** Sends text prompts to a language model to generate natural conversational responses and translate voice requests into To-Do List actions.
+* 🔄 **Awareness Node** *(from `pepper_nodes`)*: Manages visual tracking so Pepper maintains eye contact (*"SemiEngaged"*) with the user in a fluid, human-like manner.
 
 ---
 
-## ⚙️ Prerequisiti e Installazione
+## ⚙️ Prerequisites and Installation
 
-### 1. Requisiti di Sistema
-- **Framework:** ROS 2 (Humble, Iron o Jazzy)
-- **Linguaggio:** Python 3.10+
-- **Hardware/Rete:** Connessione di rete attiva con il robot Pepper (o un ambiente di simulazione compatibile).
+### 1. System Requirements
+- **Framework:** ROS 2 (Humble, Iron, or Jazzy)
+- **Language:** Python 3.10+
+- **Hardware/Network:** Active network connection with the Pepper robot (or a compatible simulation environment).
 
-### 2. Dipendenze Python
-Questo progetto richiede diverse librerie di machine learning per elaborare flussi audio e video. Puoi installare rapidamente tutte le dipendenze necessarie utilizzando il file `requirements.txt`:
+### 2. Python Dependencies
+This project requires several machine learning libraries to process audio and video streams. You can quickly install all necessary dependencies using the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
